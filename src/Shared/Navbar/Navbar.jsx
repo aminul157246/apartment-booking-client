@@ -3,13 +3,20 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
 
- 
+
 
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
 
-  
+  const items = <>
+    <li><NavLink to={'/'}>Home</NavLink></li>
+    <li><NavLink to={'/myApartment'}>MY Apartment</NavLink></li>
+    <li><NavLink to={'/whyUs'}>Why US</NavLink></li>
+    <li><NavLink to={'/blog'}>Blog</NavLink></li>
+    <li><NavLink to={'/login'}>Login </NavLink></li>
+
+  </>
 
   return (
     <div>
@@ -35,55 +42,50 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3  p-2  rounded-3xl w-52">
-              <li><NavLink to={'/'}>Home</NavLink></li>
-              <li><NavLink to={'/apartment'}>Apartment</NavLink></li>
-              <li><NavLink to={'/login'}>Login </NavLink></li>
+              {items}
 
-              
             </ul>
           </div>
-          <a className="normal-case text-xl"><img className="w-[120px] h-[100px]" src={logo} alt="" /> </a>
+          <a className="normal-case text-xl"> Apartment <br /> Booking </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-          <li><NavLink to={'/'}>Home</NavLink></li>
-              <li><NavLink to={'/apartment'}>Apartment</NavLink></li>
-              <li><NavLink to={'/login'}>Login </NavLink></li>
-              
+            {items}
+
           </ul>
 
- 
+
         </div>
         <div className="navbar-end">
-                    {
-                        user ? <div className="dropdown dropdown-end">
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img src={user.photoURL} alt='' />
-                                </div>
-                            </label>
-                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                <li>
-                                     <NavLink to={'/dashboard/profile'}className="btn btn-sm btn-ghost">Dashboard</NavLink>
-                                </li>
-                                <li>
-                                    <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
-
-                                </li>
-                                <li>
-                                    <button className="btn btn-sm  btn-ghost"
-                                        onClick={logOut}
-                                    >Logout</button>
-
-                                </li>
-                            </ul>
-                        </div>
-                            :
-                            <Link to='/login'>
-                                <button className="btn btn-sm  btn-ghost">Login</button>
-                            </Link>
-                    }
+          {
+            user ? <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={user.photoURL} alt='' />
                 </div>
+              </label>
+              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li>
+                  <NavLink to={'/dashboard/profile'} className="btn btn-sm btn-ghost">Dashboard</NavLink>
+                </li>
+                <li>
+                  <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
+
+                </li>
+                <li>
+                  <button className="btn btn-sm  btn-ghost"
+                    onClick={logOut}
+                  >Logout</button>
+
+                </li>
+              </ul>
+            </div>
+              :
+              <Link to='/login'>
+                <button className="btn btn-sm  btn-ghost">Login</button>
+              </Link>
+          }
+        </div>
       </div>
     </div>
   );

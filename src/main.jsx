@@ -17,6 +17,9 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProvider from './Shared/AuthProvider';
 import Main from './Pages/layout/Main';
+import MyApartment from './Pages/MyApartment/MyApartment';
+import WhyUs from './Pages/WhyUs/WhyUs';
+import Blog from './Pages/Blog/Blog';
 
 
 
@@ -35,8 +38,21 @@ const router = createBrowserRouter([
         element : <Home></Home>,
 
       },
-      
-      
+      {
+        path : '/myApartment',
+        element : <MyApartment/>
+
+      },
+      {
+        path : '/whyUs',
+        element : <WhyUs/>
+
+      },
+      {
+        path : '/blog',
+        element : <Blog/>
+
+      },
       {
         path : '/login',
         element : <Login></Login>

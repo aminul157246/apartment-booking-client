@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Shared/AuthProvider';
 import Google from '../Login/Google';
+import swal from 'sweetalert';
 
 const Register = () => {
 
@@ -40,7 +41,7 @@ const Register = () => {
               console.log(res.user);
                 handleUpdateProfile(name,img)
                     .then(() => {
-                        toast.success('User created successfully');
+                        swal("Good job!", "Sign in  done!", "success");
                         Navigate('/')
 
                     })
