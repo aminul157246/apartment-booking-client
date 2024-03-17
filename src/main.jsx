@@ -27,6 +27,10 @@ import MyApartment from './Pages/MyApartment/MyApartment';
 import WhyUs from './Pages/WhyUs/WhyUs';
 import Blog from './Pages/Blog/Blog';
 import ApartmentDetails from './Pages/Home/Apartments/ApartmentDetails';
+import Dashboard from './Pages/layout/Dashboard';
+import MemberProfile from './Dashboard/MemberDashboard/MemberProfile';
+import Agreement from './Dashboard/MemberDashboard/Agreement';
+import Payment from './Dashboard/MemberDashboard/Payment';
 
 
 
@@ -76,6 +80,29 @@ const router = createBrowserRouter([
       }
     ]
   },
+
+  {
+    path : '/dashboard',
+    element : <Dashboard/>,
+    children : [
+      {
+        path : 'memberProfile',
+        element: <MemberProfile/>
+      },
+      {
+        path: 'agreement',
+        element : <Agreement/>
+      },
+      {
+        path: 'payment',
+        element : <Payment/>
+      },
+      {
+        path: 'announcement',
+        element : <Agreement/>
+      },
+    ]
+  }
 
 ]);
 

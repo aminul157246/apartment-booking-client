@@ -66,7 +66,7 @@ const Navbar = () => {
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                 <li>
-                  <NavLink to={'/dashboard/profile'} className="btn btn-sm btn-ghost">Dashboard</NavLink>
+                  <NavLink to={'/dashboard'} className="btn btn-sm btn-ghost">Dashboard</NavLink>
                 </li>
                 <li>
                   <button className="btn btn-sm  btn-ghost">{user.displayName}</button>

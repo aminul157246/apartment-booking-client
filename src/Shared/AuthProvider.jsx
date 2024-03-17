@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
 
 
     }, [])
-    console.log(user);
+    // console.log(user);
 
     const authInfo = {
         signInWithGoogle, createUser, login, logOut, user, loader, handleUpdateProfile
