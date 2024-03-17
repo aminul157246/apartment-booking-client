@@ -16,7 +16,7 @@ const CreateApartment = () => {
         console.log(created);
 
         // send data in server from here
-       axios.post('http://localhost:5000/apartment', created)
+       axios.post('http://localhost:5001/apartment', created)
             
             .then((data) => {
                 console.log(data);

@@ -1,20 +1,27 @@
 
 import { Link, NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../AuthProvider";
+import useAuth from "../../hooks/useAuth";
 
 
 
 const Navbar = () => {
 
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useAuth()
 
   const items = <>
     <li><NavLink to={'/'}>Home</NavLink></li>
-    <li><NavLink to={'/myApartment'}>MY Apartment</NavLink></li>
+    <li><NavLink to={'/agreement'}>Apartments</NavLink></li>
     <li><NavLink to={'/whyUs'}>Why US</NavLink></li>
     <li><NavLink to={'/blog'}>Blog</NavLink></li>
-    <li><NavLink to={'/login'}>Login </NavLink></li>
+
+    <li>
+      {
+        user ? <p className="btn btn-sm  btn-ghost"
+          onClick={logOut}
+        >Logout</p>
+          :  <NavLink to={'/login'}>Login </NavLink> 
+      }
+    </li>
 
   </>
 

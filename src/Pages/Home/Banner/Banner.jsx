@@ -9,9 +9,8 @@ const Banner = () => {
         <div className="absolute top-16 md:top-24 lg:top-72 left-10 md:left-12 lg:left-32 z-10 space-y-3">
           <h2 className="text-2xl lg:text-6xl font-bold text-white font-Vidaloka">
             
-            <span className="text-yellow-400">We created</span> <br />
-            you  
-            celebrate
+          Buy or rent properties
+with <br /> no commission
           </h2>
           <p className="text-white">
             Planning a Wedding, Proposal or Event in our busy city is not so

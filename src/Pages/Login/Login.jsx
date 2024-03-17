@@ -38,10 +38,10 @@ const Login = () => {
     }
 
 
-    const location = useLocation()
-    // const from = location.state?.from?.pathname || '/'
-    console.log(location.pathname);
-
+    let navigate = useNavigate();
+    let location = useLocation();
+  
+    const from = location.state?.from?.pathname || "/";
 
 
 
@@ -50,8 +50,7 @@ const Login = () => {
 
     const { login } = useContext(AuthContext)
 
-    const navigate = useNavigate()
-
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -66,7 +65,7 @@ const Login = () => {
             .then(() => {
                 // console.log(currentUser.user);
                 swal("Good job!", "Sign UP done!", "success");
-                navigate(location?.state ? location.state : "/")
+                navigate(from, { replace: true });
 
 
             })
