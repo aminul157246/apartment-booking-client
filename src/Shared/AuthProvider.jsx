@@ -1,19 +1,19 @@
 
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import { createContext, useEffect, useState} from "react";
+import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null)
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 
 
     const [user, setUser] = useState({})
-    const[loader, setLoader] = useState(true)
+    const [loader, setLoader] = useState(true)
 
     //signInWithGoogle
     const provider = new GoogleAuthProvider();
-    const signInWithGoogle  = () => {
+    const signInWithGoogle = () => {
         setLoader(true)
         return signInWithPopup(auth, provider)
     }
@@ -33,36 +33,36 @@ const AuthProvider = ({children}) => {
     }
 
     // log out 
-    const logOut = ()=> {
+    const logOut = () => {
         setLoader(true)
         return signOut(auth)
-        
+
     }
 
-// update 
-const handleUpdateProfile = (name, photo) => {
-    return updateProfile(auth.currentUser, {
-        displayName: name, photoURL: photo
-    })
-}
+    // update 
+    const handleUpdateProfile = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+        })
+    }
 
     // save user 
-    useEffect(()=> {
+    useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
             setLoader(false)
         });
 
-        return ()=> {
+        return () => {
             unSubscribe()
         }
 
 
-    } ,[])
-console.log(user);
+    }, [])
+    console.log(user);
 
     const authInfo = {
-        signInWithGoogle, createUser, login,logOut, user, loader,handleUpdateProfile
+        signInWithGoogle, createUser, login, logOut, user, loader, handleUpdateProfile
     }
 
 
@@ -83,7 +83,7 @@ import PropTypes from 'prop-types';
 
 
 AuthProvider.propTypes = {
-        children: PropTypes.node
+    children: PropTypes.node
 }
 
 export default AuthProvider;
