@@ -90,6 +90,7 @@ const Apartment = ({ item }) => {
                     </div>
 
                     {/* <button onClick={handleDelete}>X</button> */}
+
                 </div>
             </div>
         </div>
