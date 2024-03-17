@@ -10,7 +10,7 @@ const Agreements = () => {
     const { isPending, data: apartments } = useQuery({
         queryKey: ['agree'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5001/apartment`)
+            const res = await fetch(`https://apartment-booking-server.vercel.app/apartment`)
             return res.json()
         }
     })

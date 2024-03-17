@@ -28,7 +28,7 @@ console.log(user.email);
 
             }
 
-            axios.post('http://localhost:5001/carts', apartmentItem)
+            axios.post('https://apartment-booking-server.vercel.app/carts', apartmentItem)
             .then(res => {
                 console.log(res.data);
             })

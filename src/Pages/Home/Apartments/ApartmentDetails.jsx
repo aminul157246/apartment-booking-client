@@ -12,7 +12,7 @@ const ApartmentDetails = () => {
     const { isPending, data: apartment } = useQuery({
         queryKey: ['apart'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5001/apartments/${id}`)
+            const res = await fetch(`https://apartment-booking-server.vercel.app/apartments/${id}`)
             return res.json()
         }
     })

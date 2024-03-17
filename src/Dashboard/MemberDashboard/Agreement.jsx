@@ -15,7 +15,7 @@ const Agreement = () => {
 // console.log(apartments);
 
 
-axios.get(`http://localhost:5001/carts?email=${user.email}`)
+axios.get(`https://apartment-booking-server.vercel.app/carts?email=${user.email}`)
 .then(res => {
     console.log(res.data);
 })

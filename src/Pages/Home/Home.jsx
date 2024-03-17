@@ -1,4 +1,3 @@
-import { Carousel } from "react-responsive-carousel";
 import Apartments from "./Apartments/Apartments";
 import Banner from "./Banner/Banner";
 import LoanHome from "./LoanHome";
