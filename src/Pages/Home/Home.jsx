@@ -1,8 +1,11 @@
+import { Carousel } from "react-responsive-carousel";
 import Apartments from "./Apartments/Apartments";
 import Banner from "./Banner/Banner";
+import LoanHome from "./LoanHome";
 import Map from "./Map/Map";
 import ModernHome from "./ModernHome";
 import PerfectHome from "./PerfectHome";
+import SuitHome from "./SuitHome";
 const Home = () => {
     return (
         <div>
@@ -11,6 +14,8 @@ const Home = () => {
            <Apartments/>
            <PerfectHome/>
            <ModernHome/>
+           <SuitHome/>
+           <LoanHome/>
            </div>
            <Map/>
         </div>
