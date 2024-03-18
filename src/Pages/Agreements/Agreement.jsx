@@ -3,7 +3,8 @@ import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
-import axios from "axios";
+// import axios from "axios";
+import { axiosSecure } from "../../hooks/useAxiosSecure";
 
 
 const Agreement = ({item}) => {
@@ -16,7 +17,6 @@ const Agreement = ({item}) => {
     const location = useLocation()
 
 
-console.log(user.email);
     const handleAddToDatabase = () => {
         if(user && user?.email ){
             //something
@@ -24,13 +24,24 @@ console.log(user.email);
 
 
             const apartmentItem = {
-                name: user.displayName , email : user?.email, ApartmentName, RentPrice , apartId :  _id, Bedrooms, Bathrooms,Address
+              itemId : _id, img1,  name: user.displayName , email : user?.email, ApartmentName, RentPrice , apartId :  _id, Bedrooms, Bathrooms,Address
 
             }
 
-            axios.post('https://apartment-booking-server.vercel.app/carts', apartmentItem)
+            axiosSecure.post('/carts', {apartmentItem})
             .then(res => {
-                console.log(res.data);
+
+                // console.log(res.data); 
+
+                if(res.data.insertedId){
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${ApartmentName}'s agreement has been successful`,
+                        showConfirmButton: false,
+                        timer: 2000
+                      });
+                }
             })
 
                 }
@@ -84,7 +95,7 @@ console.log(user.email);
 
 
                             <div className="card-actions justify-end">
-                                <button onClick={()=>handleAddToDatabase()} className="btn btn-outline">Agreement</button>
+                                <button onClick={handleAddToDatabase} className="btn btn-outline">Agreement</button>
                             </div>
                         </div>
                     </div>

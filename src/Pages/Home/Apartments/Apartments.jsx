@@ -10,7 +10,7 @@ const Apartments = () => {
             return res.json()
         }
     })
-    // console.log(apartments);
+    console.log(apartments);
 
     if (isPending) {
         return <div className="flex justify-center items-center">

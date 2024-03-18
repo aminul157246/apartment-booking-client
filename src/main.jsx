@@ -32,6 +32,7 @@ import Agreement from './Dashboard/MemberDashboard/Agreement';
 import Payment from './Dashboard/MemberDashboard/Payment';
 import Announcement from './Dashboard/MemberDashboard/Announcement';
 import Agreements from './Pages/Agreements/Agreements';
+import MyApartment from './Pages/MyApartment/MyApartment';
 
 
 
@@ -52,8 +53,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/agreement',
-        element: <Agreements/>
+        element: <Agreements />
 
+      },
+      {
+        path: '/myApartment',
+        element: <MyApartment />
       },
       {
         path: '/apartmentDetails/:id',
@@ -83,24 +88,24 @@ const router = createBrowserRouter([
   },
 
   {
-    path : '/dashboard',
-    element : <Dashboard/>,
-    children : [
+    path: '/dashboard',
+    element: <Dashboard />,
+    children: [
       {
-        path : 'memberProfile',
-        element: <MemberProfile/>
+        path: 'memberProfile',
+        element: <MemberProfile />
       },
       {
         path: 'agreement',
-        element : <Agreement/>
+        element: <Agreement />
       },
       {
         path: 'payment',
-        element : <Payment/>
+        element: <Payment />
       },
       {
         path: 'announcement',
-        element : <Announcement/>
+        element: <Announcement />
       },
     ]
   }
