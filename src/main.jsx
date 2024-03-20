@@ -33,6 +33,11 @@ import Payment from './Dashboard/MemberDashboard/Payment';
 import Announcement from './Dashboard/MemberDashboard/Announcement';
 import Agreements from './Pages/Agreements/Agreements';
 import MyApartment from './Pages/MyApartment/MyApartment';
+import ManageItems from './Dashboard/AdminDashboard/ManageItems';
+import AddItems from './Dashboard/AdminDashboard/AddItems';
+import AllUsers from './Dashboard/AdminDashboard/AllUsers';
+import AdminProfile from './Dashboard/AdminDashboard/AdminProfile';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
@@ -89,8 +94,41 @@ const router = createBrowserRouter([
 
   {
     path: '/dashboard',
-    element: <Dashboard />,
+    element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
+
+
+
+     
+       // admin Dashboard 
+      {
+        path: 'adminHome',
+        element: <AdminProfile/>
+      },
+      {
+        path: 'allUsers',
+        element: <AllUsers /> 
+      },
+      {
+        path: 'addItems',
+        element: <AddItems /> 
+      },
+      {
+        path: 'manageItems',
+        element: <ManageItems />
+      },
+      // {
+      //   path: 'manageBooking',
+      //   element: <ManageBooking />
+      // },
+      // {
+      //   path: 'updateItem/:id',
+      //   element: <UpdateItem />,
+      //   // loader : ({params}) => fetch(`http://localhost:3000/menus/${params.id}`)
+      // },
+
+
+      // user Dashboard 
       {
         path: 'memberProfile',
         element: <MemberProfile />

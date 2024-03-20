@@ -4,7 +4,7 @@ const AdminProfile = () => {
     return (
         <div>
             AdminProfile
-AdminProfile
+AdminProfile 
         </div>
     );
 };
