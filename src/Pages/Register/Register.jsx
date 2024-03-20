@@ -32,7 +32,7 @@
 //         }
 
 //         else if (!/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/.test(password)) {
-          
+
 //           toast.error("You should use valid password");
 //           return;
 //         }
@@ -86,7 +86,7 @@
 //                                 </label>
 //                                 <input type="text" required placeholder="email" className="input input-bordered" name='email' />
 //                             </div>
-                            
+
 //                             <div className="form-control">
 //                                 <label className="label">
 //                                     <span className="label-text">Password</span>
@@ -124,22 +124,23 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
-import useAuth from "../../hooks/useAuth";
 import Google from "../Login/Google";
 import { Helmet } from "react-helmet";
+import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
 
     const axiosPublic = useAxiosPublic()
 
-    const { createUser, updateUserProfile } = useAuth()
+    const { createUser, handleUpdateProfile } = useAuth()
 
     const navigate = useNavigate()
 
 
 
-    const { register, reset, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
 
     const onSubmit = data => {
@@ -148,38 +149,55 @@ const Register = () => {
         createUser(data.email, data.password)
             .then((result) => {
                 console.log(result.user);
-                toast.success('User created successfully');
+                // toast.success('User created successfully');
 
-                updateUserProfile(data.name, data.photoURL)
+                handleUpdateProfile(data.name, data.photoURL)
                     .then(() => {
 
                         // user Info send in database 
                         const userInfo = {
                             name: data.name,
                             email: data.email,
-                            // photo : data
+                            photo: data.photoURL,
                         }
                         axiosPublic.post('/users', userInfo)
                             .then(res => {
-
+                                console.log(res.data);
                                 if (res.data.insertedId) {
-                                    reset()
-                                    // console.log('user updated');
-                                    toast.success('Login successfully')
-
+                                    // reset()
+                                    // console.log('user send in db', res.data.insertedId);
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: `User created has been successful`,
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    });
                                     navigate('/')
                                 }
 
                             })
 
                     })
-                    .catch(error => {
-                        toast.error(error.message);
+                    .catch(() => {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "error",
+                            title: `Please try again`,
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
                     })
 
             })
-            .catch(error => {
-                toast.error(error.message)
+            .catch(() => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: `Please try again`,
+                    showConfirmButton: false,
+                    timer: 2000
+                });
             })
 
 
@@ -192,7 +210,7 @@ const Register = () => {
 
     return (
         <>
- <Helmet><title>New Home || Registration</title></Helmet>
+            <Helmet><title>New Home || Registration</title></Helmet>
 
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -252,8 +270,8 @@ const Register = () => {
                             </label>
                         </form>
                         <div className='flex justify-center mb-4'>
-                            <Google/>
-                            </div>
+                            <Google />
+                        </div>
                     </div>
                 </div>
             </div>

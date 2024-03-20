@@ -26,7 +26,7 @@ const [, refetch] = useCarts()
 
 
             const apartmentItem = {
-              itemId : _id, image: img1,photo: user.photoURL,  name: user.displayName , email : user?.email, ApartmentName, RentPrice , apartId :  _id, Bedrooms, Bathrooms,Address
+              itemId : _id, image: img1, photo: user.photoURL,  name: user.displayName , email : user?.email, ApartmentName, RentPrice , apartId :  _id, Bedrooms, Bathrooms,Address
 
             }
             // console.log(apartmentItem);
