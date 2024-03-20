@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import Agreement from "./Agreement";
+import { Helmet } from "react-helmet";
 
 const Agreements = () => {
 
@@ -28,6 +29,9 @@ const Agreements = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>New Home || Apartment</title>
+            </Helmet>
             {
                 apartments?.map((item) => <Agreement key={item._id} item={item}></Agreement> )
             }

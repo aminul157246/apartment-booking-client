@@ -6,7 +6,7 @@ const Google = () => {
 
     const {signInWithGoogle} = useContext(AuthContext)
 
-
+ 
     const handleGoogleLogin = () => {
         signInWithGoogle()
         .then(res => {

@@ -25,9 +25,7 @@ const Apartments = () => {
 
         <div>
 
-            <Helmet>
-                <title>New Home || Apartment</title>
-            </Helmet>
+            
 
 
             <h3 className="text-5xl mt-12 mb-4 font-semibold">Our choice of <br />

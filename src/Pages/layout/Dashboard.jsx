@@ -1,9 +1,10 @@
+import { Helmet } from "react-helmet";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
     return (
         <div className="flex">
-
+<Helmet><title>New Home || Dashboard</title></Helmet>
             <div className="w-1/4 bg-gray-400 h-[700px]">
                <li><NavLink to={'/dashboard/memberProfile'}>Profile</NavLink></li>
                <li><NavLink to={'/dashboard/agreement'}>Agreement</NavLink></li>
