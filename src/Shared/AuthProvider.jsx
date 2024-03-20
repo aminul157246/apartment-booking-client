@@ -7,7 +7,7 @@ export const AuthContext = createContext(null)
 
 const AuthProvider = ({ children }) => {
 
-
+    const axiosPublic = useAxiosPublic()
     const [user, setUser] = useState({})
     const [loader, setLoader] = useState(true)
 
@@ -50,6 +50,20 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            if (currentUser) {
+                // get token and store client
+                const userInfo = {email  : currentUser.email}
+                axiosPublic.post('/jwt' , userInfo)
+                .then(res => {
+                    if(res.data.token){
+                        localStorage.setItem('access-token', res.data.token)
+                    }
+                })
+            }
+            else {
+                // remove token (if token stored in the client side(local storage))
+                localStorage.removeItem('access-token');
+            }
             setLoader(false)
         });
 
@@ -79,6 +93,7 @@ const AuthProvider = ({ children }) => {
 
 
 import PropTypes from 'prop-types';
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 
 

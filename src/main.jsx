@@ -102,7 +102,7 @@ const router = createBrowserRouter([
      
        // admin Dashboard 
       {
-        path: 'adminHome',
+        path: 'adminProfile',
         element: <AdminProfile/>
       },
       {
