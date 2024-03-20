@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 
 
 
 const WhyUs = () => {
     return (
-        <div className="w-[1450px] mx-auto">
+        <div className="w-[1450px] mx-auto"> 
+        <Helmet>
+            <title>New Home || Why Us</title>
+        </Helmet>
             <div className="py-12 ">
                 <div className=" px-4 sm:px-6 lg:px-8">
                     <div className="text-center">

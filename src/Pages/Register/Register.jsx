@@ -6,8 +6,11 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../Shared/AuthProvider';
 import Google from '../Login/Google';
 import swal from 'sweetalert';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
+
+
 
     const { createUser, handleUpdateProfile } = useContext(AuthContext);
     const Navigate = useNavigate()
@@ -58,6 +61,8 @@ const Register = () => {
     return (
         <>
             <div className="hero min-h-screen bg-base-200">
+<Helmet><title>New Home || Registration</title></Helmet>
+
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">

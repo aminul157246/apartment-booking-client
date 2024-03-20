@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosSecure = axios.create({
-    baseURL : 'https://apartment-booking-server.vercel.app',
+    baseURL : 'http://localhost:5001',
 })
 
 

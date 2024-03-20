@@ -9,6 +9,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import Google from './Google';
 import { AuthContext } from '../../Shared/AuthProvider';
 import swal from 'sweetalert';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
 
@@ -77,6 +78,7 @@ const Login = () => {
     }
     return (
         <>
+        <Helmet><title>Login</title></Helmet>
             <div className="hero min-h-screen bg-base-200">
 
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

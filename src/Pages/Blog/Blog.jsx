@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
@@ -68,6 +69,8 @@ const Blog = () => {
 
   return (
     <div className="  min-h-screen py-12">
+<Helmet><title>New Home || Blog</title></Helmet>
+
     <div className="w-[1440px] mx-auto px-4">
         
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Blog</h1>

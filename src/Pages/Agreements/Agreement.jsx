@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 // import axios from "axios";
 import { axiosSecure } from "../../hooks/useAxiosSecure";
+import useCarts from "../../hooks/useCarts";
 
 
 const Agreement = ({item}) => {
@@ -15,18 +16,20 @@ const Agreement = ({item}) => {
     const {user} = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
-
+const [, refetch] = useCarts()
 
     const handleAddToDatabase = () => {
         if(user && user?.email ){
             //something
+            console.log(user.photoURL);
 
 
 
             const apartmentItem = {
-              itemId : _id, img1,  name: user.displayName , email : user?.email, ApartmentName, RentPrice , apartId :  _id, Bedrooms, Bathrooms,Address
+              itemId : _id, image: img1,photo: user.photoURL,  name: user.displayName , email : user?.email, ApartmentName, RentPrice , apartId :  _id, Bedrooms, Bathrooms,Address
 
             }
+            // console.log(apartmentItem);
 
             axiosSecure.post('/carts', {apartmentItem})
             .then(res => {
@@ -41,6 +44,7 @@ const Agreement = ({item}) => {
                         showConfirmButton: false,
                         timer: 2000
                       });
+                      refetch()
                 }
             })
 

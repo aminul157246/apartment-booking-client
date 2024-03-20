@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Apartment from "./Apartment";
 import { useQuery } from "@tanstack/react-query";
 
@@ -6,7 +7,7 @@ const Apartments = () => {
     const { isPending, data: apartments } = useQuery({
         queryKey: ['apartment'],
         queryFn: async () => {
-            const res = await fetch(`https://apartment-booking-server.vercel.app/apartment`)
+            const res = await fetch(`http://localhost:5001/apartment`)
             return res.json()
         }
     })
@@ -23,6 +24,11 @@ const Apartments = () => {
     return (
 
         <div>
+
+            <Helmet>
+                <title>New Home || Apartment</title>
+            </Helmet>
+
 
             <h3 className="text-5xl mt-12 mb-4 font-semibold">Our choice of <br />
                 popular real estate</h3>

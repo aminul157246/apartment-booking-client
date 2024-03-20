@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Apartments from "./Apartments/Apartments";
 import Banner from "./Banner/Banner";
 import LoanHome from "./LoanHome";
@@ -8,15 +9,21 @@ import SuitHome from "./SuitHome";
 const Home = () => {
     return (
         <div>
-           <Banner/>
-           <div className="w-[1450px] mx-auto">
-           <Apartments/>
-           <PerfectHome/>
-           <ModernHome/>
-           <SuitHome/>
-           <LoanHome/>
-           </div>
-           <Map/>
+
+            <Helmet>
+                <title>New Home || Home</title>
+            </Helmet>
+
+
+            <Banner />
+            <div className="w-[1450px] mx-auto">
+                <Apartments />
+                <PerfectHome />
+                <ModernHome />
+                <SuitHome />
+                <LoanHome />
+            </div>
+            <Map />
         </div>
     );
 };

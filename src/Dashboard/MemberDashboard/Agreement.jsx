@@ -9,7 +9,7 @@ import useCarts from "../../hooks/useCarts";
 const Agreement = () => {
 
     const [   cart] = useCarts()
-    console.log('cart', cart);
+    // console.log('cart', cart);
 
 
 // const axiosSecure = useAxiosSecure()
@@ -87,18 +87,18 @@ const Agreement = () => {
                                             <div className="flex items-center gap-3">
                                                 <div className="avatar">
                                                     <div className="mask mask-squircle w-12 h-12">
-                                                        <img src={item.apartmentItem.img1} alt="" />
+                                                        <img src={item.apartmentItem?.photo} alt="" />
                                                     </div>
                                                 </div>
 
                                             </div>
                                         </td>
                                         <td>
-                                            {item.apartmentItem.ApartmentName}
+                                            {item.apartmentItem?.ApartmentName}
 
                                         </td>
-                                        <td>{item.apartmentItem.RentPrice}</td>
-                                        <td>{item.apartmentItem.Address}</td>
+                                        <td>{item.apartmentItem?.RentPrice}</td>
+                                        <td>{item.apartmentItem?.Address}</td>
                                         <th>
                                             <button 
                                             // onClick={() => handleDelete(item._id)} 
