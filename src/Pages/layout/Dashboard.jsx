@@ -1,10 +1,13 @@
 import { Helmet } from "react-helmet";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
 
 
-    const isAdmin = true;
+    // const [isAdmin] = useAdmin();
+    const isAdmin = false;
+    console.log(isAdmin);
 
 
     return (
@@ -28,6 +31,8 @@ const Dashboard = () => {
                         <li>
                             {/* <NavLink to={'/dashboard/manageBooking'}> Manage Booking </NavLink> */}
                         </li>
+                        <div className="divider"></div>
+                            <li><NavLink to={'/'}>Home</NavLink></li>
 
                     </>
                         :

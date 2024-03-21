@@ -4,21 +4,10 @@ import { GiBathtub } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 import PropTypes from 'prop-types';
-// import axios from "axios";
-
 
 const Apartment = ({ item }) => {
 
     const { _id, ApartmentName, OwnerImg, PropertyOwner, Address, img1, RentType, RentPrice, img2, img3, img4, Bedrooms, Bathrooms, Description } = item;
-
-
-
-    // const handleDelete = () => {
-    //     axios.delete(`http://localhost:5001/apartment/${_id}`)
-    //         .then(response => {
-    //             console.log(response.data.deletedCount);
-    //         })
-    // }
 
 
     return (
@@ -33,35 +22,15 @@ const Apartment = ({ item }) => {
 
 
 
-                {/* 
-<div className="carousel carousel-center  ">
-  <div className="carousel-item">
-    <img src={img1} className=" w-96 h-96" />
-  </div> 
-  <div className="carousel-item">
-    <img src={img2} className=" w-96 h-96" />
-  </div> 
-  <div className="carousel-item">
-    <img src={img3} className=" w-96 h-96" />
-  </div> 
-  <div className="carousel-item">
-    <img src={img4} className=" w-96 h-96" />
-  </div> 
-  
-</div> */}
-
-
-
-
                 <div className="card-body p-4">
                     <p className="flex gap-1 items-center">
                         <CiLocationOn /><small>{Address}</small>
                     </p>
                     <h2 className="card-title">{ApartmentName}</h2>
-                    <p className=" text-gray-700 ">
+                    <div className=" text-gray-700 ">
                         {  Description?.length > 100 ? `${Description.slice(0, 130)}` : Description}
+                    </div>
                     <div className="border-t border-gray-300 mt-4"></div>
-                    </p>
 
                     {/* <div className="divider"></div> */}
 

@@ -27,7 +27,7 @@ const navigate = useNavigate()
                 navigate('/')
             })
 
-            console.log(res.user);
+            // console.log(res.user);
             swal("Good job!", "Sign in with Google done!", "success");
         })
         .catch(err => {

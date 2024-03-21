@@ -2,15 +2,16 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import logo from '../../assets/logo-main.png'
+import useAdmin from "../../hooks/useAdmin";
 
 
 const Navbar = () => {
 
   const { user, logOut } = useAuth()
+  const [isAdmin] = useAdmin()
 
   const items = <>
     <li><NavLink to={'/'}>Home</NavLink></li>
-    {/* <li><NavLink to={'/myApartment'}>My Apartment</NavLink></li> */}
     <li><NavLink to={'/agreement'}>Apartments</NavLink></li>
     <li><NavLink to={'/whyUs'}>Why US</NavLink></li>
     <li><NavLink to={'/blog'}>Blog</NavLink></li>
@@ -20,9 +21,23 @@ const Navbar = () => {
         user ? <p className="btn btn-sm  btn-ghost"
           onClick={logOut}
         >Logout</p>
-          :  <NavLink to={'/login'}>Login </NavLink> 
+          : <NavLink to={'/login'}>Login </NavLink>
       }
     </li>
+    {
+      user && isAdmin && <div>
+        <li><NavLink to={'/dashboard/adminProfile'}>Dashboard</NavLink></li>
+        {user.displayName}
+      </div>
+    }
+
+    {
+      user && !isAdmin && <div>
+      <li><NavLink to={'/dashboard/memberProfile'}>Dashboard</NavLink></li>
+      {user.displayName}
+    </div>
+    }
+
 
   </>
 

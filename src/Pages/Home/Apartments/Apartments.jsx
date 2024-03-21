@@ -1,21 +1,21 @@
-import { Helmet } from "react-helmet";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import Apartment from "./Apartment";
 import { useQuery } from "@tanstack/react-query";
 
 const Apartments = () => {
-
+const axiosPublic = useAxiosPublic()
     const { isPending, data: apartments } = useQuery({
         queryKey: ['apartment'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5001/apartment`)
-            return res.json()
+            const res = await axiosPublic('/apartment')
+            return res.data;
         }
     })
-    console.log(apartments);
+    // console.log(apartments);
 
     if (isPending) {
         return <div className="flex justify-center items-center">
-            <span className="loading loading-bars loading-lg"></span>
+           <p> <span className="loading loading-bars loading-lg"></span></p>
         </div>
     }
 
@@ -25,7 +25,7 @@ const Apartments = () => {
 
         <div>
 
-            
+
 
 
             <h3 className="text-5xl mt-12 mb-4 font-semibold">Our choice of <br />
@@ -40,8 +40,8 @@ const Apartments = () => {
             </div>
 
             <div className="flex justify-center items-center">
-<button className="py-3 px-4 text-xl font-semibold bg-orange-500 mt-8">Browse More Properties</button>
-</div>
+                <button className="py-3 px-4 text-xl font-semibold bg-orange-500 mt-8">Browse More Properties</button>
+            </div>
         </div>
     );
 };

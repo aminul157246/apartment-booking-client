@@ -38,6 +38,7 @@ import AddItems from './Dashboard/AdminDashboard/AddItems';
 import AllUsers from './Dashboard/AdminDashboard/AllUsers';
 import AdminProfile from './Dashboard/AdminDashboard/AdminProfile';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import UpdateApartment from './Dashboard/AdminDashboard/UpdateApartment';
 
 
 
@@ -121,11 +122,11 @@ const router = createBrowserRouter([
       //   path: 'manageBooking',
       //   element: <ManageBooking />
       // },
-      // {
-      //   path: 'updateItem/:id',
-      //   element: <UpdateItem />,
-      //   // loader : ({params}) => fetch(`http://localhost:3000/menus/${params.id}`)
-      // },
+      {
+        path: 'updateApartment/:id',
+        element: <UpdateApartment />,
+        loader : ({params}) => fetch(`http://localhost:5001/apartments/${params.id}`)
+      },
 
 
       // user Dashboard 
