@@ -1,52 +1,55 @@
-// import axios from "axios";
-// import useAuth from "../../hooks/useAuth";
-
-// import Swal from "sweetalert2";  
-// import useAxiosSecure from "../../hooks/useAxiosSecure";
-import useCarts from "../../hooks/useCarts";
-// import CartTable from "./CartTable";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAuth from "../../hooks/useAuth";
+import { useQuery } from "@tanstack/react-query";
 
 const Agreement = () => {
 
-    const [   cart] = useCarts()
-    // console.log('cart', cart);
+    const { user } = useAuth()
+    const axiosSecure = useAxiosSecure()
+
+    const { refetch, data: cart } = useQuery({
+        queryKey: ['cart', user?.email],
+
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/carts?email=${user?.email}`)
+            return res.data;
+        },
+
+    })
 
 
-// const axiosSecure = useAxiosSecure()
 
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
 
+            if (result.isConfirmed) {
 
-    // const handleDelete = (id) => {
-        // Swal.fire({
-        //     title: "Are you sure?",
-        //     text: "You won't be able to revert this!",
-        //     icon: "warning",
-        //     showCancelButton: true,
-        //     confirmButtonColor: "#3085d6",
-        //     cancelButtonColor: "#d33",
-        //     confirmButtonText: "Yes, delete it!"
-        // }).then((result) => {
+                axiosSecure.delete(`/carts/${id}`)
+                    .then(res => {
+                        if (res.data.deletedCount > 0) {
+                            refetch()
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                        // console.log(res.data);
+                    })
 
-        //     if (result.isConfirmed) {
+            }
+        });
 
-        //         axiosSecure.delete(`/carts/${id}`)
-        //             .then(res => {
-        //                 if (res.data.deletedCount > 0) {
-        //                     refetch()
-        //                     Swal.fire({
-        //                         title: "Deleted!",
-        //                         text: "Your file has been deleted.",
-        //                         icon: "success"
-        //                     });
-        //                 }
-        //                 console.log(res.data);
-        //             })
-
-        //     }
-        // });
-
-    //     console.log(id);
-    // }
+    }
 
 
 
@@ -57,12 +60,7 @@ const Agreement = () => {
     return (
         <div>
             <h2 className="text-4xl text-center ">My Cart</h2>
-           
-
-
             <div>
-
-
                 <div className="overflow-x-auto">
                     <table className="table">
                         <thead>
@@ -77,8 +75,8 @@ const Agreement = () => {
                         </thead>
                         <tbody>
 
-                         {
-                                cart.map((item, index,) => 
+                            {
+                                cart?.map((item, index,) =>
                                     <tr key={item._id}>
                                         <th>
                                             {index + 1}
@@ -100,17 +98,13 @@ const Agreement = () => {
                                         <td>{item.apartmentItem?.RentPrice}</td>
                                         <td>{item.apartmentItem?.Address}</td>
                                         <th>
-                                            <button 
-                                            // onClick={() => handleDelete(item._id)} 
-                                             className="btn btn-ghost">X</button>
+                                            <button
+                                                onClick={() => handleDelete(item._id)}
+                                                className="btn btn-ghost">X</button>
                                         </th>
                                     </tr>
                                 )
-                            } 
-
-
-
-
+                            }
                         </tbody>
 
 

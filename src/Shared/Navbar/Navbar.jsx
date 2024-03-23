@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import logo from '../../assets/logo-main.png'
 import useAdmin from "../../hooks/useAdmin";
-
+// import './navbar.css'
 
 const Navbar = () => {
 
@@ -11,10 +11,28 @@ const Navbar = () => {
   const [isAdmin] = useAdmin()
 
   const items = <>
-    <li><NavLink to={'/'}>Home</NavLink></li>
-    <li><NavLink to={'/agreement'}>Apartments</NavLink></li>
-    <li><NavLink to={'/whyUs'}>Why US</NavLink></li>
-    <li><NavLink to={'/blog'}>Blog</NavLink></li>
+  
+    <li><NavLink
+      className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "font-bold" : ""}
+      style={{ background: 'none' }}
+      to={'/'}>Home</NavLink></li>
+
+    <li><NavLink 
+    className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "font-bold" : ""}
+      style={{ background: 'none' }} to={'/agreement'}>Apartments</NavLink></li>
+
+    <li><NavLink 
+    className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "font-bold" : ""}
+      style={{ background: 'none' }}
+       to={'/whyUs'}>Why US</NavLink></li>
+
+    <li><NavLink className={({ isActive, isPending }) =>
+        isPending ? "pending" : isActive ? "font-bold" : ""}
+      style={{ background: 'none' }}
+       to={'/blog'}>Blog</NavLink></li>
 
     <li>
       {
@@ -24,19 +42,19 @@ const Navbar = () => {
           : <NavLink to={'/login'}>Login </NavLink>
       }
     </li>
-    {/* {
+    {
       user && isAdmin && <div>
         <li><NavLink to={'/dashboard/adminProfile'}>Dashboard</NavLink></li>
-        {user.displayName}
+
       </div>
     }
 
     {
       user && !isAdmin && <div>
-      <li><NavLink to={'/dashboard/memberProfile'}>Dashboard</NavLink></li>
-      {user.displayName}
-    </div>
-    } */}
+        <li><NavLink to={'/dashboard/memberProfile'}>Dashboard</NavLink></li>
+
+      </div>
+    }
 
 
   </>
@@ -93,14 +111,14 @@ const Navbar = () => {
                   {
                     user && isAdmin && <div>
                       <NavLink className="btn btn-sm btn-ghost text-center" to={'/dashboard/adminProfile'}>Dashboard</NavLink>
-                     
+
                     </div>
                   }
 
                   {
                     user && !isAdmin && <div>
                       <NavLink className="btn btn-sm btn-ghost text-center" to={'/dashboard/memberProfile'}>Dashboard</NavLink>
-                     
+
                     </div>
                   }
                 </li>
