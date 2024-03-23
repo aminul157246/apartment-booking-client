@@ -118,10 +118,6 @@ const router = createBrowserRouter([
         path: 'manageItems',
         element: <ManageItems />
       },
-      // {
-      //   path: 'manageBooking',
-      //   element: <ManageBooking />
-      // },
       {
         path: 'updateApartment/:id',
         element: <UpdateApartment />,

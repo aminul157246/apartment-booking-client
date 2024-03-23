@@ -3,7 +3,7 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { FaEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 
 
@@ -100,11 +100,11 @@ const ManageItems = () => {
                                 <td>{apartment.RentPrice}</td>
                                 <td>{apartment.Address}</td>
                                 <td>
-                                    <Link to={`/dashboard/updateApartment/${apartment._id}`}><button 
+                                    <Link to={`/dashboard/updateApartment/${apartment._id}`}><button className="  text-2xl font-bold btn btn-ghost"
                                     // onClick={() => handleUpdateItem(apartment._id)}
                                     > <FaEdit /></button></Link>
                                 </td>
-                                <td><button onClick={() => handleDeleteItem(apartment._id)}>X</button></td>
+                                <td><button className="text-red-500 text-2xl font-bold btn btn-ghost" onClick={() => handleDeleteItem(apartment._id)}><RiDeleteBin6Line/></button></td>
                             </tr>)
                         }
 

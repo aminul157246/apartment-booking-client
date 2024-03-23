@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const AllUsers = () => {
 
@@ -109,7 +110,8 @@ const AllUsers = () => {
                                         user.role === 'admin' ? 'Admin' : <button onClick={() => handleMakeAdmin(user._id)}><FaUsers /></button>
                                     }
                                 </td>
-                                <td><button onClick={() => handleDeleteUser(user._id)}>X</button></td>
+                                <td><button className="text-red-500 text-2xl font-bold btn btn-ghost" onClick={() => handleDeleteUser(user._id)}><RiDeleteBin6Line/></button></td>
+
                             </tr>)
                         }
 
