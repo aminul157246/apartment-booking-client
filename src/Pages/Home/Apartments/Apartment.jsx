@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 const Apartment = ({ item }) => {
 
-    const { _id, ApartmentName, OwnerImg, PropertyOwner, Address, img1, RentType, RentPrice, img2, img3, img4, Bedrooms, Bathrooms, Description } = item;
+    const { _id, ApartmentName, OwnerImg, PropertyOwner, Address, image, RentType, RentPrice, img2, img3, img4, Bedrooms, Bathrooms, Description } = item;
 
 
     return (
@@ -16,7 +16,7 @@ const Apartment = ({ item }) => {
             <div className=" h-[600px] card relative card-compact  bg-base-100 shadow-xl group">
                 <Link to={`/apartmentDetails/${_id}`}>
                     <figure>
-                        <img className="h-[300px] w-full" src={img1} alt="Apartment" />
+                        <img className="h-[300px] w-full" src={image} alt="Apartment" />
                     </figure>
                 </Link>
 

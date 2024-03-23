@@ -18,39 +18,38 @@ const AddItems = () => {
         console.log(data)
 
         const imageFile = { image: data.image[0] }
-        
+
 
         const res = await axiosPublic.post(image_hosting_api, imageFile,
-             {
-            headers: { 'Content-Type': 'multipart/form-data' },
-        })
+            {
+                headers: { 'Content-Type': 'multipart/form-data' },
+            })
 
         console.log(res.data);
         if (res.data.success) {
             const apartmentItem = {
-                RentPrice : data.RentPrice,
+                RentPrice: data.RentPrice,
                 RentType: data.RentType,
                 Description: data.Description,
-                ParkingArea: data.ParkingArea,
+                Area: data.Area,
                 CeilingHeight: data.CeilingHeight,
                 Renovation: data.Renovation,
                 ConstructionYear: data.ConstructionYear,
                 Furnishing: data.Furnishing,
-                AdditionalSpace: data.AdditionalSpace,
+                // AdditionalSpace: data.AdditionalSpace,
+                ApartmentItem: data.ApartmentItem,
                 Bathrooms: data.Bathrooms,
                 Bedrooms: data.Bedrooms,
                 Address: data.Address,
-                AdditionalValue: data.AdditionalValue,
                 ApartmentName: data.ApartmentName,
-                BlockName: data.BlockName,
                 FloorNo: data.FloorNo,
-                img1 : res.data.data.url,
-                
+                image: res.data.data.url,
+
             }
 
             const apartmentRes = await axiosSecure.post('/apartment', apartmentItem)
             // console.log(apartmentRes.data);
-            
+
             if (apartmentRes.data.insertedId) {
                 Swal.fire({
                     position: "top-end",
@@ -93,7 +92,7 @@ const AddItems = () => {
                                     <span className="label-text">*Apartment Image</span>
                                 </div>
                                 <input type="file" {...register("image", { required: true })} className="file-input file-input-bordered w-full max-w-xs " />
-                                
+
 
                             </label>
 
@@ -115,7 +114,7 @@ const AddItems = () => {
                                 <div className="label">
                                     <span className="label-text">*Area</span>
                                 </div>
-                                <input {...register("AdditionalValue", { required: true })} type="text" placeholder="eg. 250 sq m^2" className="input input-bordered w-full " />
+                                <input {...register("Area", { required: true })} type="text" placeholder="eg. 250 sq ft" className="input input-bordered w-full " />
 
                             </label>
 
@@ -204,39 +203,14 @@ const AddItems = () => {
 
                             <label className="form-control w-full ">
                                 <div className="label">
-                                    <span className="label-text">*BlockName</span>
-                                </div>
-                                <input {...register("BlockName", { required: true })} type="text" placeholder="eg: Tower A" className="input input-bordered w-full " />
-
-                            </label>
-
-                        </div>
-
-
-
-
-                        <div className="flex gap-8">
-
-                            <label className="form-control w-full ">
-                                <div className="label">
-                                    <span className="label-text">*Additional Space</span>
-                                </div>
-                                <input {...register("AdditionalSpace", { required: true })} type="text" placeholder="eg: Attic" className="input input-bordered w-full " />
-
-                            </label>
-
-
-
-                            <label className="form-control w-full ">
-                                <div className="label">
                                     <span className="label-text">*Furnishing</span>
                                 </div>
                                 <input {...register("Furnishing", { required: true })} type="text" placeholder="eg: Furnished" className="input input-bordered w-full " />
 
                             </label>
 
-                        </div>
 
+                        </div>
 
 
 
@@ -275,9 +249,9 @@ const AddItems = () => {
 
                             <label className="form-control w-full ">
                                 <div className="label">
-                                    <span className="label-text">*Parking Area</span>
+                                    <span className="label-text">* Area</span>
                                 </div>
-                                <input {...register("ParkingArea", { required: true })} type="number" placeholder="eg: 300 sqm^2" className="input input-bordered w-full " />
+                                <input {...register("Area", { required: true })} type="number" placeholder="eg: 300 sqm^2" className="input input-bordered w-full " />
 
                             </label>
 

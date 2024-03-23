@@ -60,11 +60,11 @@ const ManageItems = () => {
 
     return (
         <div>
-            <h2 className="text-4xl text-center">All User</h2>
-            <h3>Total User : {apartments.length}</h3>
+            <h2 className="text-4xl text-center pt-12 font-bold">All Apartments</h2>
+            <h3 className="text-3xl pl-12 font-semibold">Total Items : {apartments.length}</h3>
 
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto p-12">
                 <table className="table p-12">
                     {/* head */}
                     <thead>
@@ -74,7 +74,7 @@ const ManageItems = () => {
                             </th>
                             <th>Image</th>
                             <th>Apartment</th>
-                            <th>Price</th>
+                            <th>Price($)</th>
                             <th>Address</th>
                             <th>Update</th>
                             <th>Delete</th>
@@ -91,7 +91,7 @@ const ManageItems = () => {
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
-                                                <img src={apartment.img1} alt="Avatar Tailwind CSS Component" />
+                                                <img src={apartment.image} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                     </div>

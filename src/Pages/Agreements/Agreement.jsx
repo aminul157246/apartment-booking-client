@@ -10,7 +10,7 @@ import useCarts from "../../hooks/useCarts";
 
 const Agreement = ({item}) => {
 
-    const { _id, ApartmentName, OwnerImg, PropertyOwner, Address, img1, RentType, RentPrice, img2, img3, img4, Bedrooms, Bathrooms, Description } = item;
+    const { _id, ApartmentName,  Address, image,  RentPrice, Bedrooms, Bathrooms } = item;
     
 
     const {user} = useAuth()
@@ -26,7 +26,7 @@ const [, refetch] = useCarts()
 
 
             const apartmentItem = {
-              itemId : _id, image: img1, photo: user.photoURL,  name: user.displayName , email : user?.email, ApartmentName, RentPrice , apartId :  _id, Bedrooms, Bathrooms,Address
+              itemId : _id, image, photo: user.photoURL,  name: user.displayName , email : user?.email, ApartmentName, RentPrice , Bedrooms, Bathrooms,Address
 
             }
             // console.log(apartmentItem);
@@ -75,32 +75,35 @@ const [, refetch] = useCarts()
 
 
                     <div className="card max-w-5xl mx-auto bg-base-100 shadow-xl  mt-6">
-                        <div className="card-body ">
+                        <div className="card-body flex-row justify-between ">
 
 
                             <div className="flex gap-12">
                                 <div>
-                                    <img className="w-[250px] h-[150px] rounded" src={item.img1} alt="" />
+                                    <img className="w-[250px] h-[150px] rounded" src={item.image} alt="" />
                                 </div>
 
                                 
 
                                 <div className="space-y-1">
                                     <h2 className="text-2xl font-semibold"> {item.ApartmentName}</h2>
-                                    <p>Block Name : <span className="font-semibold">{item.BlockName}</span></p>
-                                    <p>Floor No : <span className="font-semibold">{item.FloorNo}</span></p>
-                                    <p>Price: <span className="font-semibold">{item.RentPrice}</span> $</p>
-                                    <p>Block Name : <span className="font-semibold">{item.BlockName}</span></p>
+
+                                    <p>Apartment Item : <span className="font-semibold">{item.ApartmentItem}</span> </p>
+                                    <p>Price: <span className="font-semibold">{item.RentPrice} $</span></p>
+                                    <p>Address : <span className="font-semibold">{item.Address}</span></p>
+                                    <p>Bedrooms : <span className="font-semibold">{item.Bedrooms}</span></p>
+                                    <p>Bathrooms : <span className="font-semibold">{item.Bathrooms}</span></p>
                                 </div>
+                                
 
                             </div>
 
 
-
-
-                            <div className="card-actions justify-end">
+                            <div className="pt-12">
                                 <button onClick={handleAddToDatabase} className="btn btn-outline">Agreement</button>
                             </div>
+
+                            
                         </div>
                     </div>
 

@@ -24,7 +24,7 @@ const Navbar = () => {
           : <NavLink to={'/login'}>Login </NavLink>
       }
     </li>
-    {
+    {/* {
       user && isAdmin && <div>
         <li><NavLink to={'/dashboard/adminProfile'}>Dashboard</NavLink></li>
         {user.displayName}
@@ -36,7 +36,7 @@ const Navbar = () => {
       <li><NavLink to={'/dashboard/memberProfile'}>Dashboard</NavLink></li>
       {user.displayName}
     </div>
-    }
+    } */}
 
 
   </>
@@ -89,7 +89,20 @@ const Navbar = () => {
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                 <li>
-                  <NavLink to={'/dashboard'} className="btn btn-sm btn-ghost">Dashboard</NavLink>
+                  {/* <NavLink to={'/dashboard'} className="btn btn-sm btn-ghost">Dashboard</NavLink> */}
+                  {
+                    user && isAdmin && <div>
+                      <NavLink className="btn btn-sm btn-ghost text-center" to={'/dashboard/adminProfile'}>Dashboard</NavLink>
+                     
+                    </div>
+                  }
+
+                  {
+                    user && !isAdmin && <div>
+                      <NavLink className="btn btn-sm btn-ghost text-center" to={'/dashboard/memberProfile'}>Dashboard</NavLink>
+                     
+                    </div>
+                  }
                 </li>
                 <li>
                   <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
