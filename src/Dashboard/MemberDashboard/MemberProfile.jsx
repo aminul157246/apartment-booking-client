@@ -1,26 +1,20 @@
-// import useCarts from "../../hooks/useCarts";
+
+import useAuth from "../../hooks/useAuth";
 
 const MemberProfile = () => {
 
-
-    // const [cart] = useCarts()
-    // const firstCartItem = cart[7];
-
+    const { user } = useAuth()
 
     return (
-        <div>
-            <h4 className="text-black text-4xl">MemberProfile
-                MemberProfile</h4>
 
-
-{/* 
-            <h3>{firstCartItem?.apartmentItem?.name}</h3>
-            <h3>{firstCartItem?.apartmentItem?.email}</h3>
-            <img src={firstCartItem?.apartmentItem?.photo} alt="" />
- */}
-
-
+        <div className="flex items-center space-x-4">
+            <img src={user.photoURL} alt="User Profile" className="h-96 w-96 rounded-full" />
+            <div>
+                <p className="font-medium text-5xl">{user.displayName}</p>
+                <p className="text-gray-500 text-4xl">{user.email}</p>
+            </div>
         </div>
+
     );
 };
 

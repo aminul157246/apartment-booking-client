@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const Agreement = () => {
 
@@ -61,7 +62,7 @@ const Agreement = () => {
         <div>
             <h2 className="text-4xl text-center ">My Cart</h2>
             <div>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto p-12">
                     <table className="table">
                         <thead>
                             <tr>
@@ -98,9 +99,9 @@ const Agreement = () => {
                                         <td>{item.apartmentItem?.RentPrice}</td>
                                         <td>{item.apartmentItem?.Address}</td>
                                         <th>
-                                            <button
+                                            <button 
                                                 onClick={() => handleDelete(item._id)}
-                                                className="btn btn-ghost">X</button>
+                                                className="text-red-500 text-2xl font-bold btn btn-ghost"><RiDeleteBin6Line/></button>
                                         </th>
                                     </tr>
                                 )
