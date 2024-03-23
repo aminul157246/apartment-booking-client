@@ -1,10 +1,9 @@
-import React from 'react';
-
+import Lottie from 'lottie-react';
+import comingSoon from '../../../src/lottie/coming.json'
 const Announcement = () => {
     return (
-        <div>
-            Announcement
-Announcement
+        <div className='pt-24 max-w-xl mx-auto'>
+            <Lottie animationData={comingSoon} loop={true} />;
         </div>
     );
 };

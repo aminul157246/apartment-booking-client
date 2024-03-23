@@ -7,7 +7,7 @@ const MemberProfile = () => {
 
     return (
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center p-12 space-x-4">
             <img src={user.photoURL} alt="User Profile" className="h-96 w-96 rounded-full" />
             <div>
                 <p className="font-medium text-5xl">{user.displayName}</p>
