@@ -1,19 +1,31 @@
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineBedroomParent } from "react-icons/md";
+import { BiArea } from "react-icons/bi";
 import { GiBathtub } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import PropTypes from 'prop-types';
+import { useEffect } from "react";
 
 const Apartment = ({ item }) => {
 
-    const { _id, ApartmentName, OwnerImg, PropertyOwner, Address, image, RentType, RentPrice, img2, img3, img4, Bedrooms, Bathrooms, Description } = item;
+    useEffect(() => {
+        AOS.init({
+            duration: "2000"
+        });
+
+    }, [])
+
+
+    const { _id, ApartmentName,Area, OwnerImg, PropertyOwner, Address, image, RentType, RentPrice, img2, img3, img4, Bedrooms, Bathrooms, Description } = item;
 
 
     return (
-        <div className="mt-12  ">
+        <div className="mt-12  " data-aos="zoom-in-up">
 
-            <div className=" h-[600px] card relative card-compact  bg-base-100 shadow-xl group">
+            <div className=" h-[550px]  card relative card-compact  bg-base-100 shadow-xl group">
                 <Link to={`/apartmentDetails/${_id}`}>
                     <figure>
                         <img className="h-[300px] w-full" src={image} alt="Apartment" />
@@ -22,7 +34,7 @@ const Apartment = ({ item }) => {
 
 
 
-                <div className="card-body p-4">
+                <div className="space-y-2  p-4">
                     <p className="flex gap-1 items-center">
                         <CiLocationOn /><small>{Address}</small>
                     </p>
@@ -36,9 +48,12 @@ const Apartment = ({ item }) => {
 
 
 
-                    <div className="flex justify-between">
+                    <div className="flex justify-between pt-3">
                         <p className="text-2xl">{RentPrice}$</p>
                         <div className="flex gap-8">
+                            <p className="flex items-center text-2xl gap-2">
+                                <span className="text-3xl"><BiArea /></span>{Area}
+                            </p>
                             <p className="flex items-center text-2xl gap-2">
                                 <span className="text-3xl"><MdOutlineBedroomParent /></span>{Bathrooms}
                             </p>

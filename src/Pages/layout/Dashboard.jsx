@@ -6,7 +6,7 @@ const Dashboard = () => {
 
 
     const [isAdmin] = useAdmin();
-    console.log(isAdmin);
+    // console.log(isAdmin);
 
 
     return (
@@ -14,7 +14,7 @@ const Dashboard = () => {
             <Helmet><title>New Home || Dashboard</title></Helmet>
             <div className="w-1/5 p-12  bg-gray-300">
                 {
-                    isAdmin ? <div className="list-none space-y-2">
+                    isAdmin ? <div className="list-none min-h-screen space-y-2">
 
                         <li className="transition-transform duration-300 ease-in-out transform hover:translate-x-1">
                             <NavLink className={({ isActive, isPending }) =>
@@ -40,6 +40,12 @@ const Dashboard = () => {
                                 style={{ background: 'none' }} to={'/dashboard/manageItems'}> Manage Items </NavLink>
                         </li>
 
+                        <li className="transition-transform duration-300 ease-in-out transform hover:translate-x-1">
+                                <NavLink className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "font-bold" : ""}
+                                    style={{ background: 'none' }} to={'/dashboard/announcement'}>Announcement</NavLink></li>
+
+
                        
                        
 
@@ -57,7 +63,7 @@ const Dashboard = () => {
 
                     </div>
                         :
-                        <div className="list-none space-y-2">
+                        <div className="list-none min-h-screen space-y-2">
                             <li className="transition-transform duration-300 ease-in-out transform hover:translate-x-1"><NavLink className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "font-bold" : ""}
                                 style={{ background: 'none' }} to={'/dashboard/memberProfile'}>Profile</NavLink></li>
@@ -72,16 +78,12 @@ const Dashboard = () => {
                                     isPending ? "pending" : isActive ? "font-bold" : ""}
                                     style={{ background: 'none' }} to={'/dashboard/payment'}>Payment</NavLink></li>
 
-                            {/* <li className="transition-transform duration-300 ease-in-out transform hover:translate-x-1">
+                            <li className="transition-transform duration-300 ease-in-out transform hover:translate-x-1">
                             <NavLink className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "font-bold" : ""}
-                                style={{ background: 'none' }} to={'/dashboard/paymentHistory'}>Payment History</NavLink></li> */}
+                                style={{ background: 'none' }} to={'/dashboard/paymentHistory'}>Payment History</NavLink></li>
 
-                            <li className="transition-transform duration-300 ease-in-out transform hover:translate-x-1">
-                                <NavLink className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "font-bold" : ""}
-                                    style={{ background: 'none' }} to={'/dashboard/announcement'}>Announcement</NavLink></li>
-
+                            
                             <div className="divider"></div>
 
                             <li className="transition-transform duration-300 ease-in-out transform hover:translate-x-1">

@@ -13,6 +13,12 @@ const axiosPublic = useAxiosPublic()
     })
     // console.log(apartments);
 
+
+    const totalItem = apartments?.length;
+    console.log(totalItem);
+
+
+
     if (isPending) {
         return <div className="flex justify-center items-center">
            <p> <span className="loading loading-bars loading-lg"></span></p>

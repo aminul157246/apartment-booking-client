@@ -30,7 +30,6 @@ import Dashboard from './Pages/layout/Dashboard';
 import MemberProfile from './Dashboard/MemberDashboard/MemberProfile';
 import Agreement from './Dashboard/MemberDashboard/Agreement';
 import Payment from './Dashboard/MemberDashboard/Payment';
-import Announcement from './Dashboard/MemberDashboard/Announcement';
 import Agreements from './Pages/Agreements/Agreements';
 import MyApartment from './Pages/MyApartment/MyApartment';
 import ManageItems from './Dashboard/AdminDashboard/ManageItems';
@@ -39,6 +38,8 @@ import AllUsers from './Dashboard/AdminDashboard/AllUsers';
 import AdminProfile from './Dashboard/AdminDashboard/AdminProfile';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdateApartment from './Dashboard/AdminDashboard/UpdateApartment';
+import PaymentHistory from './Dashboard/MemberDashboard/PaymentHistory';
+import Announcement from './Dashboard/AdminDashboard/Announcement';
 
 
 
@@ -123,7 +124,10 @@ const router = createBrowserRouter([
         element: <UpdateApartment />,
         loader : ({params}) => fetch(`http://localhost:5001/apartments/${params.id}`)
       },
-
+      {
+        path: 'announcement',
+        element: <Announcement/>
+      },
 
       // user Dashboard 
       {
@@ -139,9 +143,10 @@ const router = createBrowserRouter([
         element: <Payment />
       },
       {
-        path: 'announcement',
-        element: <Announcement />
+        path: 'paymentHistory',
+        element: <PaymentHistory />
       },
+     
     ]
   }
 
