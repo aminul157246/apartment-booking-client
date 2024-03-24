@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import Apartment from "./Apartment";
-import { useQuery } from "@tanstack/react-query";
-import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+// import useAxiosPublic from "../../../hooks/useAxiosPublic";
+// import { useQuery } from "@tanstack/react-query";
+// import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 
 
 const Apartments = () => {
 
 
+    const [apartments, setApartments] = useState([])
     const [currentPage, setCurrentPage] = useState(0)
-    const [itemPerPage, setItemPerPage] = useState(3)
-    const [apartments, setApartments] = useState()
+    const [itemPerPage, setItemPerPage] = useState(6)
 
     // const axiosPublic = useAxiosPublic()
     // const { isPending, data: apartments } = useQuery({
@@ -30,7 +30,7 @@ const Apartments = () => {
             .then(data => setApartments(data))
     }, [currentPage, itemPerPage]);
 
-
+console.log(apartments);
     const totalItem = apartments?.length;
     console.log(totalItem);
     // const itemPerPage = 3;
@@ -43,26 +43,26 @@ const Apartments = () => {
     console.log(pages);
 
 
-    const handleItemPerPage = e => {
+    const handleItemPerPage = (e) => {
         const value = parseInt(e.target.value)
         console.log(value);
         setItemPerPage(value)
         setCurrentPage(0)
     }
 
-    const handlePrev = () => {
-        if (currentPage > 0) {
-            setCurrentPage(currentPage - 1)
-        }
-    }
+    // const handlePrev = () => {
+    //     if (currentPage > 0) {
+    //         setCurrentPage(currentPage - 1)
+    //     }
+    // }
 
-    const handleNext = () => {
-        if (currentPage < pages.length - 1) {
-            setCurrentPage(currentPage + 1)
-        }
-    }
+    // const handleNext = () => {
+    //     if (currentPage < pages.length - 1) {
+    //         setCurrentPage(currentPage + 1)
+    //     }
+    // }
 
-    console.log(currentPage);
+    // console.log(currentPage);
 
 
 
@@ -106,9 +106,9 @@ const Apartments = () => {
                     </button></div>)
                 }
                 <select className="mt-8" name="" value={itemPerPage} id="" onChange={handleItemPerPage}>
-                    <option  value="3"><span>3</span></option>
-                    <option  value="6"><span>6</span></option>
-                    <option  value="9"><span>9</span></option>
+                    <option  value="3">3</option>
+                    <option  value="6">6</option>
+                    <option  value="9">9</option>
                 </select>
                 {/* <div className="text-2xl pt-10">
                     <button onClick={handleNext}><BiRightArrowAlt /></button>

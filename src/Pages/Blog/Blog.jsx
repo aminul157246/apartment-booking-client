@@ -81,7 +81,7 @@ const Blog = () => {
             <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
             <p className="text-gray-600 mb-2">By {post.author} - {post.date}</p>
             <p className="text-gray-700">{post.content}</p>
-            <Link to={`/blog/${post.id}`} className="block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+            <Link to={`/blog/${post.id}`} className="block mt-4 text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
               Read More
             </Link>
           </div>

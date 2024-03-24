@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import logo from '../../assets/logo-main.png'
 import useAdmin from "../../hooks/useAdmin";
-// import './navbar.css'
 
 const Navbar = () => {
 

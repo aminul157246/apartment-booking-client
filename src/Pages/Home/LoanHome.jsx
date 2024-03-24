@@ -9,7 +9,7 @@ const LoanHome = () => {
 
     useEffect(() => {
         AOS.init({
-            duration: "2000"
+             duration: "1000"
         });
 
     }, [])

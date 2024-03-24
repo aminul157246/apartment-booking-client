@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 const Testimonial = () => {
     useEffect(() => {
         AOS.init({
-            duration: "2000"
+             duration: "1000"
         });
 
     }, [])

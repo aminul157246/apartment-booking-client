@@ -23,7 +23,6 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProvider from './Shared/AuthProvider';
 import Main from './Pages/layout/Main';
-import WhyUs from './Pages/WhyUs/WhyUs';
 import Blog from './Pages/Blog/Blog';
 import ApartmentDetails from './Pages/Home/Apartments/ApartmentDetails';
 import Dashboard from './Pages/layout/Dashboard';
@@ -40,6 +39,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdateApartment from './Dashboard/AdminDashboard/UpdateApartment';
 import PaymentHistory from './Dashboard/MemberDashboard/PaymentHistory';
 import Announcement from './Dashboard/AdminDashboard/Announcement';
+import WhyUs from './Pages/WhyUs/WhyUs';
 
 
 
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/apartmentDetails/:id',
-        element: <ApartmentDetails />,
+        element: <PrivateRoute><ApartmentDetails /></PrivateRoute>,
       },
       {
         path: '/whyUs',
