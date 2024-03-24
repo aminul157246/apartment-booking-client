@@ -2,12 +2,12 @@ import videoBg from '../../../assets/banner-video.mp4'
 import './banner.css'
 const Banner = () => {
     return (
-        <div className='main'>
+        <div>
         <video className='video' src={videoBg} autoPlay loop muted />
 
 
-        <div className="absolute top-16 md:top-24 lg:top-72 left-10 md:left-12 lg:left-32 z-10 space-y-3">
-          <h2 className="text-2xl lg:text-6xl font-bold text-white font-Vidaloka">
+        <div className="absolute top-36 md:top-24 lg:top-72 left-10 md:left-12 lg:left-32 z-10 space-y-3">
+          <h2 className="text-3xl lg:text-6xl font-bold text-white font-Vidaloka">
             
           Buy or rent properties
 with <br /> no commission

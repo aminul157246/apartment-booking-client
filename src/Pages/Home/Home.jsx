@@ -33,7 +33,7 @@ const Home = () => {
 
 
             <Banner />
-            <div className="w-[1450px] mx-auto">
+            <div className="lg:w-[1450px] mx-auto">
                 <Apartments />
                 <PerfectHome />
                 {/* <div data-aos="fade-right"> */}

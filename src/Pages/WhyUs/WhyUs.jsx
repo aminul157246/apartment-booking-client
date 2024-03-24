@@ -9,7 +9,7 @@ import Vision from "./Vission";
 
 const WhyUs = () => {
     return (
-        <div className="w-[1450px] mx-auto"> 
+        <div className="lg:w-[1450px] mx-auto"> 
         <Helmet>
             <title>New Home || Why Us</title>
         </Helmet>

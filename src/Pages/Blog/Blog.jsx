@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
@@ -52,43 +51,31 @@ const Blog = () => {
       image: "https://source.unsplash.com/800x600/?food",
       content: "Embark on a culinary journey and discover the best foodie destinations around the world for an unforgettable  experience."
     },
-    
+
   ];
-
-
-
-
-  const featuredCategories = [
-    { id: 1, name: "Travel Tips", slug: "travel-tips" },
-    { id: 2, name: "Apartment Hunting", slug: "apartment-hunting" },
-    { id: 3, name: "Budget Travel", slug: "budget-travel" },
-    // Add more featured categories here
-  ];
-
-
 
   return (
-    <div className="  min-h-screen py-12">
-<Helmet><title>New Home || Blog</title></Helmet>
+    <div className="  min-h-screen md:py-8 lg:py-12">
+      <Helmet><title>New Home || Blog</title></Helmet>
 
-    <div className="w-[1440px] mx-auto px-4">
-        
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Blog</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogPosts.map(post => (
-          <div key={post.id} className="p-6 bg-white rounded-lg shadow-md transition duration-300 transform hover:scale-105">
-            <img src={post.image} alt={post.title} className="mb-4 rounded-lg" />
-            <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-            <p className="text-gray-600 mb-2">By {post.author} - {post.date}</p>
-            <p className="text-gray-700">{post.content}</p>
-            <Link to={`/blog/${post.id}`} className="block mt-4 text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
-              Read More
-            </Link>
-          </div>
-        ))}
+      <div className="w-full lg:w-[1440px] mx-auto mt-8 px-2 md:px-4 lg:px-4">
+
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Blog</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.map(post => (
+            <div key={post.id} className="p-6 bg-white rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+              <img src={post.image} alt={post.title} className="mb-4 rounded-lg" />
+              <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+              <p className="text-gray-600 mb-2">By {post.author} - {post.date}</p>
+              <p className="text-gray-700">{post.content}</p>
+              <div  className=" mt-4 text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                <button>Read More</button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 

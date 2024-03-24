@@ -19,13 +19,13 @@ const Apartment = ({ item }) => {
     }, [])
 
 
-    const { _id, ApartmentName,Area, OwnerImg, PropertyOwner, Address, image, RentType, RentPrice, img2, img3, img4, Bedrooms, Bathrooms, Description } = item;
+    const { _id, ApartmentName,Area, OwnerImg, PropertyOwner, Address, image, RentType, RentPrice, Bedrooms, Bathrooms, Description } = item;
 
 
     return (
-        <div className="mt-12  " data-aos="zoom-in-up">
+        <div className="lg:mt-12  " data-aos="zoom-in-up">
 
-            <div className=" h-[550px]  card relative card-compact  bg-base-100 shadow-xl group">
+            <div className="p-3 lg:h-[550px] w-full card relative card-compact  bg-base-100 shadow-xl group">
                 <Link to={`/apartmentDetails/${_id}`}>
                     <figure>
                         <img className="h-[300px] w-full" src={image} alt="Apartment" />
@@ -48,24 +48,24 @@ const Apartment = ({ item }) => {
 
 
 
-                    <div className="flex justify-between pt-3">
-                        <p className="text-2xl">{RentPrice}$</p>
-                        <div className="flex gap-8">
-                            <p className="flex items-center text-2xl gap-2">
-                                <span className="text-3xl"><BiArea /></span>{Area}
+                    <div className="flex gap-6 lg:justify-between pt-3">
+                        <p className="text-xl lg:text-2xl">{RentPrice}$</p>
+                        <div className="flex gap-3 lg:gap-8">
+                            <p className="flex items-center lg:text-2xl gap-2">
+                                <span className="lg:text-3xl"><BiArea /></span>{Area}
                             </p>
-                            <p className="flex items-center text-2xl gap-2">
-                                <span className="text-3xl"><MdOutlineBedroomParent /></span>{Bathrooms}
+                            <p className="flex items-center lg:text-2xl gap-2">
+                                <span className="lg:text-3xl"><MdOutlineBedroomParent /></span>{Bathrooms}
                             </p>
-                            <p className="flex items-center text-2xl gap-2">
-                                <span className="text-3xl"><GiBathtub /></span>{Bedrooms}
+                            <p className="flex items-center lg:text-2xl gap-2">
+                                <span className="lg:text-3xl"><GiBathtub /></span>{Bedrooms}
                             </p>
                         </div>
                     </div>
                     <div className="card-actions justify-end">
                     </div>
 
-                    <p className="absolute bg-gray-300 text-black rounded px-3 py-1 -left-2 top-4">For {RentType}</p>
+                    <p className="absolute bg-gray-300 text-black rounded px-3 py-1 -left-1 lg:-left-2 top-4">For {RentType}</p>
 
 
                     <div className="absolute text-black rounded px-3 py-1 right-2 top-48 opacity-0 group-hover:opacity-100 transition-opacity duration-400">

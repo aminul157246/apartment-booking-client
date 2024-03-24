@@ -85,10 +85,10 @@ console.log(apartments);
 
 
 
-            <h3 className="text-5xl mt-12 mb-4 font-semibold">Our choice of <br />
+            <h3 className="text-3xl lg:text-5xl p-5 mt-12 mb-4 font-semibold">Our choice of  
                 popular real estate</h3>
 
-            <div className="grid grid-cols-3 gap-6 ">
+            <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
 
                 {
                     apartments?.map((item) => <Apartment item={item} key={item._id} ></Apartment>)

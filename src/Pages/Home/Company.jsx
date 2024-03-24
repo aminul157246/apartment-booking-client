@@ -13,14 +13,14 @@ const Company = () => {
     return (
         <div className="my-6">
             <Marquee>
-                <img className=" w-48 flex items-center ml-8 pt-3 justify-center" src={img1} alt="" />
-                <img className=" w-48 flex items-center ml-8 pt-3 justify-center" src={img2} alt="" />
-                <img className=" w-48 flex items-center ml-8 pt-3 justify-center" src={img3} alt="" />
-                <img className=" w-48 flex items-center ml-8 pt-3 justify-center" src={img4} alt="" />
-                <img className=" w-48 flex items-center ml-8 pt-3 justify-center" src={img5} alt="" />
-                <img className=" w-48 flex items-center ml-8 pt-3 justify-center" src={img6} alt="" />
-                <img className=" w-48 flex items-center ml-8 pt-3 justify-center" src={img7} alt="" />
-                <img className=" w-48 flex items-center ml-8 pt-3 justify-center" src={img8} alt="" />
+                <img className="w-28 lg:w-48 flex items-center ml-8 pt-3 justify-center" src={img1} alt="" />
+                <img className="w-28 lg:w-48 flex items-center ml-8 pt-3 justify-center" src={img2} alt="" />
+                <img className="w-28 lg:w-48 flex items-center ml-8 pt-3 justify-center" src={img3} alt="" />
+                <img className="w-28 lg:w-48 flex items-center ml-8 pt-3 justify-center" src={img4} alt="" />
+                <img className="w-28 lg:w-48 flex items-center ml-8 pt-3 justify-center" src={img5} alt="" />
+                <img className="w-28 lg:w-48 flex items-center ml-8 pt-3 justify-center" src={img6} alt="" />
+                <img className="w-28 lg:w-48 flex items-center ml-8 pt-3 justify-center" src={img7} alt="" />
+                <img className="w-28 lg:w-48 flex items-center ml-8 pt-3 justify-center" src={img8} alt="" />
             </Marquee>
         </div>
     );

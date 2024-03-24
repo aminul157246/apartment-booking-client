@@ -87,17 +87,17 @@ const Agreement = ({ item }) => {
 
 
             <div className="card max-w-5xl mx-auto bg-base-100 shadow-xl  mt-6">
-                <div className="card-body flex-row justify-between ">
+                <div className="card-body lg:flex-row justify-between ">
 
 
-                    <div className="flex gap-12">
+                    <div className="lg:flex lg:gap-12">
                         <div>
-                            <img className="w-[250px] h-[150px] rounded" src={item.image} alt="" />
+                            <img className="w-full lg:w-[250px] h-[200px] lg:h-[150px] rounded" src={item.image} alt="" />
                         </div>
 
 
 
-                        <div className="space-y-1">
+                        <div className="space-y-1 mt-4">
                             <h2 className="text-2xl font-semibold"> {item.ApartmentName}</h2>
 
                             <p>Apartment Item : <span className="font-semibold">{item.ApartmentItem}</span> </p>
@@ -111,7 +111,7 @@ const Agreement = ({ item }) => {
                     </div>
 
 
-                    <div className="pt-12">
+                    <div className="pt-2 flex justify-center lg:pt-12 ">
                         <button onClick={handleAddToDatabase} className="btn btn-outline">Agreement</button>
                     </div>
 
