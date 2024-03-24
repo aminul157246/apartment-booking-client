@@ -2,10 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 
 const ApartmentDetails = () => {
-
-    // const hi = useLoaderData()
-    // console.log(hi);
-
+    
     const { id } = useParams()
     // console.log(id);
 
