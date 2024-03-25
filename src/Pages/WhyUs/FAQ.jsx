@@ -15,7 +15,7 @@ const FAQ = () => {
 
     return (
         <div className="mt-12" data-aos="fade-up  ">
-            <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold lg:font-semibold ml-4 mb-8">Frequently asked questions : </h3>
+            <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold lg:font-semibold font-textStyle ml-4 mb-8">Frequently asked questions : </h3>
             <div className="collapse collapse-plus bg-base-200 ">
   <input type="radio" name="my-accordion-3" defaultChecked /> 
   <div className="collapse-title text-xl font-medium">

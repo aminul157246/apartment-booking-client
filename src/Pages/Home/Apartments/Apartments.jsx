@@ -25,7 +25,7 @@ const Apartments = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5001/apartment?page=${currentPage}&size=${itemPerPage}`)
+        fetch(`https://apartment-booking-server.vercel.app/apartment?page=${currentPage}&size=${itemPerPage}`)
             .then(res => res.json())
             .then(data => setApartments(data))
     }, [currentPage, itemPerPage]);
@@ -84,9 +84,10 @@ console.log(apartments);
 
 
 
-
-            <h3 className="text-3xl lg:text-5xl p-5 mt-12 mb-4 font-semibold">Our choice of  
-                popular real estate</h3>
+            <h3 className="text-3xl font-textStyle lg:text-5xl p-5 mt-12  font-semibold">Our choice of  <br />
+                <span className="ml-16">
+                popular real estate
+                    </span></h3>
 
             <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
 
@@ -101,10 +102,11 @@ console.log(apartments);
                     <button onClick={handlePrev}><BiLeftArrowAlt /></button>
                 </div> */}
                 {
-                    pages.map(page => <div className=" bg-red-200 ml-2 px-4 py-2 mt-8 " key={page}><button className={currentPage === page && 'font-bold text-xl'} onClick={() => setCurrentPage(page)} >
+                    pages.map(page => <div className=" font-textStyle border-4 bg-white ml-2 px-4 py-2 mt-8 " key={page}><button className={currentPage === page && 'font-bold text-xl'} onClick={() => setCurrentPage(page)} >
                         {/* {page} */} Grid items by 
                     </button></div>)
                 }
+
                 <select className="mt-8" name="" value={itemPerPage} id="" onChange={handleItemPerPage}>
                     <option  value="3">3</option>
                     <option  value="6">6</option>

@@ -31,7 +31,7 @@ const SuitHome = () => {
 
                    <div  className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center lg:gap-80">
                    <div className='p-5' >
-                   <h2 className="text-3xl lg:text-6xl font-bold text-white font-Vidaloka"> Find a home that <br /> truly suits you</h2>
+                   <h2 className="text-3xl font-textStyle lg:text-6xl font-bold text-white font-Vidaloka"> Find a home that <br /> truly suits you</h2>
                     <p className="text-white">Proposal or Event in our busy city is not so easy</p>
                    </div>
                    <div className="bg-gray-200 p-5 lg:p-12 space-y-3">

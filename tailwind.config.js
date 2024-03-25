@@ -6,8 +6,12 @@ export default {
 ],
 
   theme: {
-    
-    extend: {},
+   
+    extend: {
+      fontFamily : {
+       textStyle :  "'Anta', sans-serif"
+      }
+    },
   },
   plugins: [require("daisyui")],
 

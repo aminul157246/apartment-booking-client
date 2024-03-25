@@ -20,7 +20,7 @@ const ModernHome = () => {
             </div>
 
             <div className="flex-1 mt-6 " data-aos="zoom-in-right">
-                <h3 className="text-3xl lg:text-5xl">Modern spaces and <br />
+                <h3 className="text-3xl font-textStyle lg:text-5xl">Modern spaces and <br />
                     <span className="font-bold"> premium</span> design</h3>
                 <p className="mt-6">Learn effective practical tips to help you find budgeting strategies and <br /> tips to make the most of your travel funds for your next vacation.</p>
                 <p className="mt-3">– Mea omnium explicari</p>

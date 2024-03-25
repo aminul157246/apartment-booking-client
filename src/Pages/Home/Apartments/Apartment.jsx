@@ -38,7 +38,7 @@ const Apartment = ({ item }) => {
                     <p className="flex gap-1 items-center">
                         <CiLocationOn /><small>{Address}</small>
                     </p>
-                    <h2 className="card-title">{ApartmentName}</h2>
+                    <h2 className="card-title font-textStyle">{ApartmentName}</h2>
                     <div className=" text-gray-700 ">
                         {  Description?.length > 100 ? `${Description.slice(0, 130)}` : Description}
                     </div>
@@ -49,15 +49,15 @@ const Apartment = ({ item }) => {
 
 
                     <div className="flex gap-6 lg:justify-between pt-3">
-                        <p className="text-xl lg:text-2xl">{RentPrice}$</p>
+                        <p className="text-xl ">{RentPrice}$</p>
                         <div className="flex gap-3 lg:gap-8">
-                            <p className="flex items-center lg:text-2xl gap-2">
+                            <p className="flex items-center  gap-2">
                                 <span className="lg:text-3xl"><BiArea /></span>{Area}
                             </p>
-                            <p className="flex items-center lg:text-2xl gap-2">
+                            <p className="flex items-center  gap-2">
                                 <span className="lg:text-3xl"><MdOutlineBedroomParent /></span>{Bathrooms}
                             </p>
-                            <p className="flex items-center lg:text-2xl gap-2">
+                            <p className="flex items-center  gap-2">
                                 <span className="lg:text-3xl"><GiBathtub /></span>{Bedrooms}
                             </p>
                         </div>

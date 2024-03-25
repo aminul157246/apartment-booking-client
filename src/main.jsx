@@ -122,7 +122,7 @@ const router = createBrowserRouter([
       {
         path: 'updateApartment/:id',
         element: <UpdateApartment />,
-        loader : ({params}) => fetch(`http://localhost:5001/apartments/${params.id}`)
+        loader : ({params}) => fetch(`https://apartment-booking-server.vercel.app/apartments/${params.id}`)
       },
       {
         path: 'announcement',

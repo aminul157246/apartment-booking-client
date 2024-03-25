@@ -23,7 +23,7 @@ const Vision = () => {
 
             <div className="flex-1 " data-aos="zoom-in-right">
  
-                <h3 className="text-5xl">Our <br />
+                <h3 className="text-5xl font-textStyle">Our <br />
                     <span className="font-bold ml-20"> Vision</span></h3>
                 <p className="mt-6">Mazim saepe instructior mel ei, sanctus assueverit per at, ad eam veri putent nonumes. Id duo modo quidam maluisset, ut mel tractatos intellegat. Ea electram repudiandae qui. Ea soluta meliore accumsan vel, est veniam populo ea. Mel habeo elitr dissentiunt id, oratio fabulas lobortis te pri.</p>
                 

@@ -23,7 +23,7 @@ const LoanHome = () => {
 
             <div className="flex-1 " data-aos="zoom-in-right">
  
-                <h3 className="text-5xl mt-4">Explore your home <br />
+                <h3 className="text-5xl font-textStyle mt-4">Explore your home <br />
                     <span className="font-bold"> loan</span> options</h3>
                 <p className="mt-6">Learn effective practical tips to help you find budgeting strategies and <br /> tips to make the most of your travel funds for your next vacation.</p>
                 

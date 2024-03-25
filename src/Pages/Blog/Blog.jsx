@@ -55,12 +55,12 @@ const Blog = () => {
   ];
 
   return (
-    <div className="  min-h-screen md:py-8 lg:py-12">
+    <div className="  min-h-screen md:py-8 lg:pt-12">
       <Helmet><title>New Home || Blog</title></Helmet>
 
       <div className="w-full lg:w-[1440px] mx-auto mt-8 px-2 md:px-4 lg:px-4">
 
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Blog</h1>
+        <h1 className="text-4xl font-textStyle font-bold text-center mb-4 text-gray-800">Blog</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map(post => (
             <div key={post.id} className="p-6 bg-white rounded-lg shadow-md transition duration-300 transform hover:scale-105">

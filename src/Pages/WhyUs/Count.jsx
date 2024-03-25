@@ -21,7 +21,7 @@ const Count = () => {
         <div data-aos="fade-up" className="container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 text-2xl md:text-4xl lg:text-5xl gap-4  shadow-lg bg-blue-50 p-12 mt-12">
 
             <div>
-                <div className="flex  font-bold justify-center mt-4 ">
+                <div className="flex  font-bold justify-center font-textStyle mt-4 ">
                     <h3 >$</h3>
                     <CountUp end={980} />
                     <h3>k</h3>
@@ -31,7 +31,7 @@ const Count = () => {
 
 
            <div>
-           <div className='flex font-bold justify-center mt-4'>
+           <div className='flex font-bold justify-center font-textStyle mt-4'>
                 <CountUp end={24} />
             </div>
                 <h3 className='text-sm lg:text-xl mt-3 text-center'>Properties sold</h3>
@@ -39,7 +39,7 @@ const Count = () => {
            </div>
 
             <div>
-                <div className="flex font-bold justify-center mt-4">
+                <div className="flex font-bold justify-center font-textStyle mt-4">
                     <h3 >$</h3>
                     <CountUp end={680} />
                     <h3>k</h3>
@@ -49,7 +49,7 @@ const Count = () => {
 
 
           <div>
-          <div className='flex font-bold justify-center mt-4'>
+          <div className='flex font-bold justify-center font-textStyle mt-4'>
                 <CountUp end={95} />
             </div>
                 <h3 className='text-center text-sm lg:text-xl mt-3'>Properties leased</h3>
@@ -57,7 +57,7 @@ const Count = () => {
           </div>
 
             <div>
-                <div className="flex font-bold justify-center mt-4">
+                <div className="flex font-bold justify-center font-textStyle mt-4">
                     <h3 >$</h3>
                     <CountUp end={722} />
                     <h3>k</h3>
