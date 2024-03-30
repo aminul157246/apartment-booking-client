@@ -3,13 +3,14 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Agreement = () => {
 
     const { user } = useAuth()
     const axiosSecure = useAxiosSecure()
 
-    const { refetch, data: cart } = useQuery({
+    const { refetch, data: cart =[]} = useQuery({
         queryKey: ['cart', user?.email],
 
         queryFn: async () => {
@@ -19,7 +20,11 @@ const Agreement = () => {
 
     })
 
+    console.log(cart);
 
+    const totalPrice = cart.reduce((acc, item) => acc + item?.apartmentItem?.RentPrice, 0);
+
+console.log(totalPrice);
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -62,6 +67,20 @@ const Agreement = () => {
         <div>
             <h2 className="text-4xl text-center ">My Cart</h2>
             <div>
+
+                <div className="flex justify-end gap-6 pr-36 items-center ">
+                    <h2 className="text-2xl  ">Total price : {totalPrice}</h2>
+
+                    <div>
+                        {
+                            cart.length ?
+                                <Link className="px-4 py-2 bg-blue-300 rounded-lg font-bold" to={'/dashboard/payment'}> <button>Pay</button></Link>
+                                :
+                                <button disabled>Pay</button>
+
+                        }
+                    </div>
+                </div>
                 <div className="overflow-x-auto p-12">
                     <table className="table">
                         <thead>
@@ -99,9 +118,9 @@ const Agreement = () => {
                                         <td>{item.apartmentItem?.RentPrice}</td>
                                         <td>{item.apartmentItem?.Address}</td>
                                         <th>
-                                            <button 
+                                            <button
                                                 onClick={() => handleDelete(item._id)}
-                                                className="text-red-500 text-2xl font-bold btn btn-ghost"><RiDeleteBin6Line/></button>
+                                                className="text-red-500 text-2xl font-bold btn btn-ghost"><RiDeleteBin6Line /></button>
                                         </th>
                                     </tr>
                                 )

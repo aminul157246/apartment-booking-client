@@ -3,13 +3,13 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-],
+  ],
 
   theme: {
-   
+
     extend: {
-      fontFamily : {
-       textStyle :  "'Anta', sans-serif"
+      fontFamily: {
+        textStyle: "'Anta', sans-serif"
       }
     },
   },
