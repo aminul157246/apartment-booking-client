@@ -20,11 +20,10 @@ const Agreement = () => {
 
     })
 
-    console.log(cart);
+    // console.log(cart);
 
     const totalPrice = cart.reduce((acc, item) => acc + item?.apartmentItem?.RentPrice, 0);
 
-console.log(totalPrice);
 
     const handleDelete = (id) => {
         Swal.fire({
