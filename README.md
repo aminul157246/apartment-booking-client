@@ -1,5 +1,7 @@
 # New Home | | Apartment Booking Type
 
+### Live-Link : https://remarkable-babka-8ef47b.netlify.app/
+
 ## Overview:
 
 "New Home" is a sophisticated apartment booking website designed to streamline the process of finding and securing ideal living spaces. It serves as a centralized platform where users can explore available apartments, manage their bookings, and interact with administrators for inquiries and assistance. Leveraging cutting-edge technologies such as React, Tailwind CSS, Node.js, and MongoDB, the platform offers a seamless user experience characterized by intuitive navigation, responsive design, and robust functionality.
