@@ -37,7 +37,7 @@ const Payment = () => {
                 <h3 className="text-center font-bold font-textStyle text-3xl">Total Price : {totalPrice} $</h3>
             </div>
 
-            <div>
+            <div className="mt-12 px-48 py-12  bg-blue-100">
                 <Elements stripe={stripePromise} >
                     <CheckoutFrom/>
                 </Elements>
