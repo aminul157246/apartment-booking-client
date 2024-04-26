@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import CheckoutFrom from "./CheckoutFrom";
+// import { loadStripe } from "@stripe/stripe-js";
+// import { Elements } from "@stripe/react-stripe-js";
+// import CheckoutFrom from "./CheckoutFrom";
+import Lottie from "lottie-react";
+import comingSoon from '../../../src/lottie/coming.json'
 
 const Payment = () => {
 
@@ -26,7 +28,7 @@ const Payment = () => {
     const totalPrice = cart.reduce((acc, item) => acc + item.apartmentItem?.RentPrice, 0);
 
 
-    const stripePromise = loadStripe(import.meta.env.VITE_PK);
+    // const stripePromise = loadStripe('pk_test_51Oe7BxBFKVxdQIZ0stxU2e5n5EOaP1manIMB8H8ju0I5mpRttFnfQPOOsc9VfORjYmOi5PacjyyWCsWMpSSQkc5B00Li8wRA3p');
 
 
     return (
@@ -38,9 +40,13 @@ const Payment = () => {
             </div>
 
             <div className="mt-12 px-48 py-12  bg-blue-100">
-                <Elements stripe={stripePromise} >
+                {/* <Elements stripe={stripePromise} >
                     <CheckoutFrom/>
-                </Elements>
+                </Elements> */}
+
+
+<Lottie animationData={comingSoon} loop={true} />;
+
             </div>
 
 
