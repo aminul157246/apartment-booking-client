@@ -37,13 +37,11 @@ import AllUsers from './Dashboard/AdminDashboard/AllUsers';
 import AdminProfile from './Dashboard/AdminDashboard/AdminProfile';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdateApartment from './Dashboard/AdminDashboard/UpdateApartment';
-import PaymentHistory from './Dashboard/MemberDashboard/PaymentHistory';
 import Announcement from './Dashboard/AdminDashboard/Announcement';
 import WhyUs from './Pages/WhyUs/WhyUs';
-import VideoConference from './Dashboard/AdminDashboard/VideoConference/VideoConference';
-import Room from './Dashboard/AdminDashboard/VideoConference/Room/Room';
 import Success from './Dashboard/MemberDashboard/paymentRoute/Success';
 import Failed from './Dashboard/MemberDashboard/paymentRoute/Failed';
+import VideoCall from './Dashboard/AdminDashboard/VideoCall';
 
 
 
@@ -141,13 +139,10 @@ const router = createBrowserRouter([
         element: <Announcement/>
       },
       {
-        path: 'videoConference',
-        element: <VideoConference/>
+        path: 'videoCall',
+        element: <VideoCall/>
       },
-      {
-        path: 'videoConference/room/:roomId',
-        element: <Room/>
-      },
+     
 
       // user Dashboard 
       {

@@ -1,10 +1,9 @@
-import React from 'react';
+import Lottie from 'lottie-react';
 
 const Success = () => {
     return (
         <div>
-            Success
-            Success
+             <Lottie animationData={comingSoon} loop={true} />
         </div>
     );
 };
