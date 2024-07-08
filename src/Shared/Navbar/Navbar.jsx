@@ -11,29 +11,29 @@ const Navbar = () => {
 
   const items = <>
   
-    <li className="transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink
+    <li className="text-gray-800 transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink
       className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "font-bold" : ""}
       style={{ background: 'none' }}
       to={'/'}>Home</NavLink></li>
 
-    <li className="transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink 
+    <li className="text-gray-800 transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink 
     className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "font-bold" : ""}
       style={{ background: 'none' }} to={'/agreement'}>Apartments</NavLink></li>
 
-    <li className="transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink 
+    <li className="text-gray-800 transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink 
     className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "font-bold" : ""}
       style={{ background: 'none' }}
        to={'/whyUs'}>Why US</NavLink></li>
 
-    <li className="transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink className={({ isActive, isPending }) =>
+    <li className="text-gray-800 transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "font-bold" : ""}
       style={{ background: 'none' }}
        to={'/blog'}>Blog</NavLink></li>
 
-    <li className="transition-transform duration-300 ease-in-out transform hover:-translate-y-1">
+    <li className="text-gray-800 transition-transform duration-300 ease-in-out transform hover:-translate-y-1">
       {
         user ? <p  style={{background:'none'}}
           onClick={logOut}
@@ -45,14 +45,14 @@ const Navbar = () => {
     </li>
     {
       user && isAdmin && <div>
-        <li className="transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink to={'/dashboard/adminProfile'}>Dashboard</NavLink></li>
+        <li className="text-gray-800 transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink to={'/dashboard/adminProfile'}>Dashboard</NavLink></li>
 
       </div>
     }
 
     {
       user && !isAdmin && <div>
-        <li className="transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink style={{background:'none'}} to={'/dashboard/memberProfile'}>Dashboard</NavLink></li>
+        <li className="text-gray-800 transition-transform duration-300 ease-in-out transform hover:-translate-y-1"><NavLink style={{background:'none'}} to={'/dashboard/memberProfile'}>Dashboard</NavLink></li>
 
       </div>
     }
@@ -136,7 +136,7 @@ const Navbar = () => {
             </div>
               :
               <Link to='/login'>
-                <button className="btn btn-sm  btn-ghost">Login</button>
+                <button className="text-gray-800 btn btn-sm  btn-ghost">Login</button>
               </Link>
           }
         </div>

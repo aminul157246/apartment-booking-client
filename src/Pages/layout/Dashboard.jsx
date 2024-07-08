@@ -51,6 +51,11 @@ const Dashboard = () => {
                                 isPending ? "pending" : isActive ? "font-bold" : ""}
                                 style={{ background: 'none' }} to={'/dashboard/announcement'}>Announcement</NavLink></li>
 
+                        <li className="transition-transform duration-300 ease-in-out transform hover:translate-x-1">
+                            <NavLink className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "font-bold" : ""}
+                                style={{ background: 'none' }} to={'/dashboard/videoConference'}>Video Conference</NavLink></li>
+
 
 
 

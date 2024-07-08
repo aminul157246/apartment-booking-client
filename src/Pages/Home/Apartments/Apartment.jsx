@@ -39,7 +39,7 @@ const Apartment = ({ item }) => {
                         <CiLocationOn /><small>{Address}</small>
                     </p>
                     <h2 className="card-title font-textStyle">{ApartmentName}</h2>
-                    <div className=" text-gray-700 ">
+                    <div className=" text-gray-500 ">
                         {  Description?.length > 100 ? `${Description.slice(0, 130)}` : Description}
                     </div>
                     <div className="border-t border-gray-300 mt-4"></div>

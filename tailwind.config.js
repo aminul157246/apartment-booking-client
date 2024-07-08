@@ -9,7 +9,7 @@ export default {
 
     extend: {
       fontFamily: {
-        textStyle: "'Anta', sans-serif"
+        textStyle: "'Playwrite Deutschland Grundschrift', sans-serif"
       }
     },
   },

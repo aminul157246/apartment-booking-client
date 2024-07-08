@@ -40,6 +40,10 @@ import UpdateApartment from './Dashboard/AdminDashboard/UpdateApartment';
 import PaymentHistory from './Dashboard/MemberDashboard/PaymentHistory';
 import Announcement from './Dashboard/AdminDashboard/Announcement';
 import WhyUs from './Pages/WhyUs/WhyUs';
+import VideoConference from './Dashboard/AdminDashboard/VideoConference/VideoConference';
+import Room from './Dashboard/AdminDashboard/VideoConference/Room/Room';
+import Success from './Dashboard/MemberDashboard/paymentRoute/Success';
+import Failed from './Dashboard/MemberDashboard/paymentRoute/Failed';
 
 
 
@@ -90,7 +94,15 @@ const router = createBrowserRouter([
       {
         path: '/registration',
         element: <Register />
-      }
+      },
+      {
+        path : 'payment/success/:transId',
+        element : <Success/>
+      },
+      {
+        path : 'payment/failed/:transId',
+        element : <Failed/>
+      },
     ]
   },
 
@@ -128,6 +140,14 @@ const router = createBrowserRouter([
         path: 'announcement',
         element: <Announcement/>
       },
+      {
+        path: 'videoConference',
+        element: <VideoConference/>
+      },
+      {
+        path: 'videoConference/room/:roomId',
+        element: <Room/>
+      },
 
       // user Dashboard 
       {
@@ -142,10 +162,7 @@ const router = createBrowserRouter([
         path: 'payment',
         element: <Payment />
       },
-      {
-        path: 'paymentHistory',
-        element: <PaymentHistory />
-      },
+      
      
     ]
   }

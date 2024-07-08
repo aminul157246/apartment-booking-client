@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
+
 const Agreement = () => {
 
     const { user } = useAuth()
@@ -62,6 +63,7 @@ const Agreement = () => {
 
 
 
+
     return (
         <div>
             <h2 className="text-4xl text-center ">My Cart</h2>
@@ -71,13 +73,8 @@ const Agreement = () => {
                     <h2 className="text-2xl  ">Total price : {totalPrice}</h2>
 
                     <div>
-                        {
-                            cart.length ?
-                                <Link className="px-4 py-2 bg-blue-300 rounded-lg font-bold" to={'/dashboard/payment'}> <button>Pay</button></Link>
-                                :
-                                <button disabled>Pay</button>
 
-                        }
+                        <Link to='/dashboard/payment'><button > Pay </button></Link>
                     </div>
                 </div>
                 <div className="overflow-x-auto p-12">
